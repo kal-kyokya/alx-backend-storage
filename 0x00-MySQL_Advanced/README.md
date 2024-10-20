@@ -2,27 +2,40 @@
 
 This directory contains all scripts generated during resolution of the tasks provided by [ALX Africa](https://www.alxafrica.com) to its Software Engineering program on the topic of 'Advanced MySQL'.
 
-Requirements
-General
-All your files will be executed on Ubuntu 18.04 LTS using MySQL 5.7 (version 5.7.30)
-All your files should end with a new line
-All your SQL queries should have a comment just before (i.e. syntax above)
-All your files should start by a comment describing the task
-All SQL keywords should be in uppercase (SELECT, WHERE…)
-A README.md file, at the root of the folder of the project, is mandatory
-The length of your files will be tested using wc
-More Info
-Comments for your SQL file:
+## Requirements
+###General
+
+	->	All files will be executed on:
+			* Ubuntu 18.04 LTS
+				using:
+					* MySQL 5.7 (version 5.7.30)
+	->	All files should end with a new line
+	->	All SQL queries should have a comment just before
+	->	All files should start by a comment describing the task
+	->	All SQL keywords should be in uppercase:
+			* SELECT,
+			* WHERE,
+			* …
+	->	A README.md file, at the root of the folder of the project, is mandatory
+	->	The length of files will be tested using:
+			* wc
+
+## More Info
+#### Comments for all SQL file:
+```
 $ cat my_script.sql
--- 3 first students in the Batch ID=3
--- because Batch 3 is the best!
-SELECT id, name FROM students WHERE batch_id = 3 ORDER BY created_at DESC LIMIT 3;
+-- 3 first students from Cohort=22
+-- because Cohort 22 is the best!
+SELECT id, name FROM students WHERE cohort_id = 22 ORDER BY created_at DESC LIMIT 3;
 $
-Use “container-on-demand” to run MySQL
-Ask for container Ubuntu 18.04 - Python 3.7
-Connect via SSH
-Or via the WebTerminal
-In the container, you should start MySQL before playing with it:
+```
+
+## Use “container-on-demand” to run MySQL
+* Ask for container Ubuntu 18.04 - Python 3.7
+* Connect via SSH
+* Or via the WebTerminal
+* In the container, one should start MySQL before playing with it:
+```
 $ service mysql start
  * MySQL Community Server 5.7.30 is started
 $
@@ -34,9 +47,11 @@ mysql
 performance_schema
 sys
 $
-In the container, credentials are root/root
+```
+##### In the container, credentials are root/root
 
-How to import a SQL dump
+## How to import a SQL dump
+```
 $ echo "CREATE DATABASE hbtn_0d_tvshows;" | mysql -uroot -p
 Enter password: 
 $ curl "https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/274/hbtn_0d_tvshows.sql" -s | mysql -uroot -p hbtn_0d_tvshows
@@ -53,3 +68,4 @@ id  name
 7   Suspense
 8   Thriller
 $
+```
