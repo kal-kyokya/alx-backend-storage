@@ -3,7 +3,7 @@
 This directory contains all scripts generated during resolution of the tasks provided by [ALX Africa](https://www.alxafrica.com) to its Software Engineering program on the topic of 'Advanced MySQL'.
 
 ## Requirements
-###General
+### General
 
 	->	All files will be executed on:
 			* Ubuntu 18.04 LTS
