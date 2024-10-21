@@ -8,7 +8,6 @@ CREATE PROCEDURE AddBonus(
     IN projectName VARCHAR(255),
     IN userScore INT
 )
-
 BEGIN
     -- Insert the project if it doesn't exist
     INSERT INTO projects (name)
@@ -19,7 +18,7 @@ BEGIN
     INSERT INTO corrections (user_id, project_id, score)
     VALUES (
         userId,
-        COALESCE(SELECT id FROM projects WHERE name = projectName, LAST_INSERT_ID()),
+        COALESCE((SELECT id FROM projects WHERE name = projectName), LAST_INSERT_ID()),
         userScore
     );
 
