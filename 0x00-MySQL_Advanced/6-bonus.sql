@@ -3,6 +3,8 @@
 
 DELIMITER $$
 
+DROP PROCEDURE IF EXISTS AddBonus;
+
 CREATE PROCEDURE AddBonus(
     IN userId INT,
     IN projectName VARCHAR(255),
