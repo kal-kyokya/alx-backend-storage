@@ -1,6 +1,6 @@
 # 0x01. NoSQL
 
-This directory is home to all files/scripts creating during learning and practicing on the topic of NoSQL through the tasks provided and assigned by [ALX Africa](https:www.alxafrica.com) to the members of its specialization program in Software Engineering.
+This directory is home to all files/scripts creating during learning and practicing on the topic of NoSQL through the tasks provided and assigned by ALX Africa (www.alxafrica.com) to the members of its specialization program in Software Engineering.
 
 ## Requirements
 
