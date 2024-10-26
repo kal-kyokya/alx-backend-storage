@@ -9,6 +9,7 @@ def list_all(mongo_collection):
 
     Arg:
         mongo_collection: NoSQL Collection to be processed.
+
     Return:
         A list of all contained documents.
     """
