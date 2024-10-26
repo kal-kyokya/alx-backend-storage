@@ -1,0 +1,3 @@
+// Filter out documents of a collection using an attribute
+
+db.school.find({"name": "Holberton school"})
