@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """
 '9-insert_school' contains a function inserting a document into a collection
 """
