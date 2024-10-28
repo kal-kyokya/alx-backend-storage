@@ -2,9 +2,26 @@
 """
 'exercise' creates a class enabling manipulation of a Redis database
 """
+from functools import wraps
 import redis
 from typing import Callable, Optional, Union
 import uuid
+
+
+def count_calls(method: Callable) -> Callable:
+    """
+    decorates a method to count how many times it was called
+    """
+
+    @wraps(method)
+    def wrapper(self, *args, **kwargs):
+        """
+        wrapper function
+        """
+        self._redis.incr(method.__qualname__)
+        return method(self, *args, **kwargs)
+
+    return wrapper
 
 
 class Cache:
@@ -15,6 +32,7 @@ class Cache:
         self._redis = redis.Redis()
         self._redis.flushdb()
 
+    @count_calls
     def store(self, data: Union[str, bytes, int, float]) -> str:
         """Write information in the Redis database."""
         key = str(uuid.uuid4())
